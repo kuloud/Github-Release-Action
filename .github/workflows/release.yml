@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Create a Release
-      uses: elgohr/Github-Release-Action@main
+      uses: kuloud/Github-Release-Action@main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -31,7 +31,7 @@ jobs:
           token: ${{ secrets.RELEASE_TOKEN }} # for pushing to protected branch
       - name: Publish new version
         run: |
-          git config --global user.email "no_reply@gohr.digital"
-          git config --global user.name "Release Bot"
+          git config --global user.email "xkuloud@gmail.com"
+          git config --global user.name "kuloud"
           git tag -fa v5 -m "Update v5 tag"
           git push origin v5 --force

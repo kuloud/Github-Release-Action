@@ -1,6 +1,6 @@
 # Github-Release-Action
 
-[![Actions Status](https://github.com/elgohr/Github-Release-Action/workflows/Release/badge.svg)](https://github.com/elgohr/Github-Release-Action/actions)
+[![Actions Status](https://github.com/kuloud/Github-Release-Action/workflows/Release/badge.svg)](https://github.com/kuloud/Github-Release-Action/actions)
 
 Creates a plain Github release, without attaching assets or source code.
 
