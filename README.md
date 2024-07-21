@@ -11,29 +11,73 @@ name: Publish Release
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Create a Release
-      uses: elgohr/Github-Release-Action@v5
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        title: MyReleaseMessage
+      - uses: actions/checkout@v4
+      - name: Create a Release
+        uses: kuloud/Github-Release-Action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: MyReleaseMessage
+          draft: false
+          prerelease: false
 ```
 
 ## Mandatory Arguments
 
 ### title
+
 `title` is a message which should appear in the release. May contain spaces.
 
 ## Optional Arguments
 
+### tag_name
+
+`tag_name` is the name of the tag for the release. If not provided, it will use the current git tag.
+
+### body
+
+`body` is the text content of the release. Can be used to provide detailed release notes.
+
+### draft
+
+`draft` determines whether the release should be created as a draft. Default is false.
+
+### prerelease
+
+`prerelease` specifies if this is a prerelease. Default is false.
+
 ### workdir
-`workdir` can be used to specify a directory that contains the repository to be published. 
+
+`workdir` can be used to specify a directory that contains the repository to be published.
+
+### generate_notes
+
+`generate_notes` automatically generates release notes if set to true. Default is false.
+
+### notes
+
+`notes` allows you to specify release notes directly.
+
+### notes_file
+
+`notes_file` is the path to a file containing release notes.
+
+### discussion_category
+
+`discussion_category` specifies the GitHub Discussions category to create for this release.
+
+### target
+
+`target` allows you to specify the target branch or commit for the release.
+
+### verify_tag
+
+`verify_tag` verifies if the tag exists before creating the release. Default is false.
 
 ## Notes
 

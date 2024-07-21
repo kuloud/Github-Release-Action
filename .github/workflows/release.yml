@@ -33,5 +33,5 @@ jobs:
         run: |
           git config --global user.email "xkuloud@gmail.com"
           git config --global user.name "kuloud"
-          git tag -fa v5 -m "Update v5 tag"
-          git push origin v5 --force
+          git tag -fa v1 -m "Update v1 tag"
+          git push origin v1 --force
